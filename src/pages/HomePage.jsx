@@ -17,6 +17,9 @@ import {
   Waves,
   Wind
 } from "lucide-react";
+import { MediaPlaceholder } from "../../components/MediaPlaceholder";
+import { ResponsivePicture } from "../../components/ResponsivePicture";
+import { homepageCategoryMedia } from "../../lib/product-media";
 import styles from "../../app/page.module.css";
 
 const trustMetrics = [
@@ -41,49 +44,52 @@ const trustMetrics = [
 
 const categoryCards = [
   {
-    title: "Filter Media",
-    icon: Layers3,
-    text: "Needle-punched polyester, needle-punched polypropylene, and monofilament mesh media for custom fabrication."
-  },
-  {
     title: "Liquid Filter Bags",
     icon: ShoppingBag,
-    text: "Mesh and felt bags in polypropylene, polyester, aramid, and PTFE formats."
+    text: "Mesh and felt bags in polypropylene, polyester, aramid, and PTFE formats.",
+    media: homepageCategoryMedia["Liquid Filter Bags"]
   },
   {
     title: "Filter Cartridges",
     icon: Filter,
-    text: "Melt blown, string wound, pleated, membrane, and carbon cartridge options."
+    text: "Melt blown, string wound, pleated, membrane, and carbon cartridge options.",
+    media: homepageCategoryMedia["Filter Cartridges"]
   },
   {
     title: "High Flow Cartridges",
     icon: Gauge,
-    text: "Big-diameter cartridges for high-volume systems that need fewer change-outs."
+    text: "Big-diameter cartridges for high-volume systems that need fewer change-outs.",
+    media: homepageCategoryMedia["High Flow Cartridges"]
   },
   {
     title: "Pleated Membrane Cartridges",
     icon: Atom,
-    text: "PP, PES, PTFE, Nylon 6, and PVDF membrane cartridge families."
+    text: "PP, PES, PTFE, Nylon 6, and PVDF membrane cartridge families.",
+    media: homepageCategoryMedia["Pleated Membrane Cartridges"]
   },
   {
     title: "Melt Blown Cartridges",
     icon: Wind,
-    text: "Thermally bonded PP depth cartridges for broad industrial service."
+    text: "Thermally bonded PP depth cartridges for broad industrial service.",
+    media: homepageCategoryMedia["Melt Blown Cartridges"]
   },
   {
     title: "Oil & Carbon Cartridges",
     icon: Flame,
-    text: "Oil absorption cartridges, activated carbon, and carbon block formats."
+    text: "Oil absorption cartridges, activated carbon, and carbon block formats.",
+    media: homepageCategoryMedia["Oil & Carbon Cartridges"]
   },
   {
     title: "String Wound - Extended Line",
     icon: Waves,
-    text: "Standard and extra-long string wound cartridges for higher dirt-holding capacity."
+    text: "Standard and extra-long string wound cartridges for higher dirt-holding capacity.",
+    media: homepageCategoryMedia["String Wound - Extended Line"]
   },
   {
     title: "Filter Housings",
     icon: Box,
-    text: "Single bag, duplex, multi-bag, cartridge, self-cleaning, and RO membrane housings."
+    text: "Single bag, duplex, multi-bag, cartridge, self-cleaning, and RO membrane housings.",
+    media: homepageCategoryMedia["Filter Housings"]
   }
 ];
 
@@ -183,7 +189,7 @@ export function HomePage() {
           <div className={styles.sectionHeader}>
             <div>
               <span className="eyebrow">Product families</span>
-              <h2 className={`display ${styles.sectionTitle}`}>Nine clear product families with room for product photos.</h2>
+              <h2 className={`display ${styles.sectionTitle}`}>Eight clear product families with room for product photos.</h2>
             </div>
             <p className={styles.sectionText}>
               Each card is built with a dedicated image slot, so real photography can drop into the layout later
@@ -196,12 +202,26 @@ export function HomePage() {
 
               return (
                 <article key={item.title} className={`card ${styles.categoryCard}`}>
-                  <div className={styles.categoryMedia}>
-                    <div className={styles.categoryMediaFrame}>
-                      <Icon size={28} />
-                      <span className={styles.mediaLabel}>16:9 image slot</span>
+                  {item.media ? (
+                    <div className={styles.categoryMedia}>
+                      <ResponsivePicture
+                        basePath={item.media.basePath}
+                        alt={item.media.alt}
+                        className={styles.categoryImage}
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
+                      <span className={styles.mediaLabel}>{item.media.caption}</span>
                     </div>
-                  </div>
+                  ) : (
+                    <>
+                      {/* TODO: add dedicated filter media roll photography for this category. */}
+                      <MediaPlaceholder
+                        className={styles.categoryPlaceholder}
+                        title="Filter Media roll photography coming soon"
+                        note="TODO: add dedicated media-roll photography for this category."
+                      />
+                    </>
+                  )}
                   <div className={styles.categoryTopline}>
                     <Icon size={18} />
                     <span className="chip">{item.title}</span>

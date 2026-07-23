@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { getProductBySlug, products } from "@/lib/products";
 import { SpecTable } from "@/components/SpecTable";
 import styles from "./product-detail.module.css";
@@ -39,10 +39,6 @@ export default async function ProductDetailPage({ params }) {
             <ArrowLeft size={16} />
             Back to products
           </Link>
-          <Link href={`/contact?product=${encodeURIComponent(product.name)}`} className="btn btn-cta">
-            Request pricing for this product
-            <ArrowRight size={16} />
-          </Link>
         </div>
 
         <div className={styles.head}>
@@ -65,10 +61,6 @@ export default async function ProductDetailPage({ params }) {
           <p>
             Pricing is confirmed on request so it can track live supplier terms and your actual process conditions.
           </p>
-          <Link href={`/contact?product=${encodeURIComponent(product.name)}`} className="btn btn-primary">
-            Request pricing
-            <ArrowRight size={16} />
-          </Link>
         </div>
       </div>
     </section>

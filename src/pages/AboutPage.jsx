@@ -1,4 +1,6 @@
 import styles from "../../app/about/about.module.css";
+import { ResponsivePicture } from "../../components/ResponsivePicture";
+import { workshopGallery } from "../../lib/product-media";
 
 const performanceFactors = [
   {
@@ -86,6 +88,17 @@ export function AboutPage() {
               ))}
             </div>
           </article>
+        </div>
+
+        <div className={styles.workshopGrid}>
+          {workshopGallery.map((image) => (
+            <figure key={image.basePath} className={styles.workshopCard}>
+              <div className={styles.workshopMedia}>
+                <ResponsivePicture basePath={image.basePath} alt={image.alt} sizes="(max-width: 768px) 100vw, 50vw" />
+              </div>
+              <figcaption className={styles.workshopCaption}>{image.caption}</figcaption>
+            </figure>
+          ))}
         </div>
 
         <div className="card card-pad">

@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 16px;
   padding: 22px;
-  min-height: 240px;
+  min-height: 100%;
   border-radius: var(--radius-lg);
   border: 1px solid var(--hairline);
   background: rgba(255, 255, 255, 0.72);
@@ -24,6 +24,16 @@
   align-items: center;
   justify-content: space-between;
   color: var(--clarity);
+}
+
+.galleryWrap {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.content {
+  display: grid;
+  gap: 12px;
 }
 
 .title {

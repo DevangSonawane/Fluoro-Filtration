@@ -1,9 +1,8 @@
 "use client";
 
-import { Link } from "react-router-dom";
-import { useMemo, useState } from "react";
-import { Check, ChevronRight } from "lucide-react";
-import { getFinderResults, initialFinderState } from "@/lib/finder-logic";
+import { useState } from "react";
+import { Check } from "lucide-react";
+import { initialFinderState } from "@/lib/finder-logic";
 import styles from "./FiltrationFinder.module.css";
 
 const processOptions = [
@@ -26,7 +25,8 @@ const conditionOptions = [
 
 export function FiltrationFinder() {
   const [state, setState] = useState(initialFinderState);
-  const results = useMemo(() => getFinderResults(state), [state]);
+  const conditionCount = [state.highTemp, state.solvent, state.autoclavable].filter(Boolean).length;
+  const progressStep = conditionCount > 0 ? 3 : state.micron ? 2 : 1;
 
   return (
     <section id="finder" className={`card ${styles.shell}`}>
@@ -40,13 +40,26 @@ export function FiltrationFinder() {
         </div>
         <div className={styles.badge}>
           <Check size={16} />
-          Client-side logic for v1
+          Interactive guide
         </div>
+      </div>
+
+      <div className={styles.progress}>
+        {["Process stream", "Micron range", "Special conditions"].map((label, index) => {
+          const active = index + 1 <= progressStep;
+
+          return (
+            <div key={label} className={`${styles.progressStep} ${active ? styles.progressStepActive : ""}`}>
+              <span>{index + 1}</span>
+              <strong>{label}</strong>
+            </div>
+          );
+        })}
       </div>
 
       <div className={styles.steps}>
         <div className={styles.step}>
-          <div className={styles.stepLabel}>Step 1</div>
+          <div className={styles.stepLabel}>Step 1 of 3</div>
           <div className={styles.stepTitle}>What are you filtering?</div>
           <div className={styles.optionGrid}>
             {processOptions.map((option) => {
@@ -67,7 +80,7 @@ export function FiltrationFinder() {
         </div>
 
         <div className={styles.step}>
-          <div className={styles.stepLabel}>Step 2</div>
+          <div className={styles.stepLabel}>Step 2 of 3</div>
           <div className={styles.stepTitle}>What micron range do you need?</div>
           <div className={styles.pills}>
             {micronOptions.map((option) => {
@@ -87,7 +100,7 @@ export function FiltrationFinder() {
         </div>
 
         <div className={styles.step}>
-          <div className={styles.stepLabel}>Step 3</div>
+          <div className={styles.stepLabel}>Step 3 of 3</div>
           <div className={styles.stepTitle}>Any special conditions?</div>
           <div className={styles.conditions}>
             {conditionOptions.map((option) => {
@@ -104,39 +117,6 @@ export function FiltrationFinder() {
               );
             })}
           </div>
-        </div>
-      </div>
-
-      <div className={styles.results}>
-        <div className={styles.resultHead}>
-          <div>
-            <div className={styles.stepLabel}>Result</div>
-            <div className={styles.stepTitle}>Recommended product families</div>
-          </div>
-          <Link to="/products" className="btn btn-secondary">
-            View all products
-            <ChevronRight size={16} />
-          </Link>
-        </div>
-
-        <div className={styles.resultList}>
-          {results.map(({ product, reason }) => (
-            <Link key={product.slug} to={`/products/${product.slug}`} className={styles.resultCard}>
-              <div className={styles.resultName}>{product.name}</div>
-              <p className={styles.resultReason}>{reason}</p>
-              <div className={styles.resultMeta}>
-                <span>{product.series}</span>
-                <span>
-                  {product.micronRatings[0]} to {product.micronRatings[product.micronRatings.length - 1]}
-                </span>
-              </div>
-            </Link>
-          ))}
-          {results.length === 0 ? (
-            <div className={styles.empty}>
-              No direct match yet. We can still review the spec sheet and narrow it manually.
-            </div>
-          ) : null}
         </div>
       </div>
     </section>

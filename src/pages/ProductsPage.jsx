@@ -6,39 +6,39 @@ import styles from "../../app/products/products.module.css";
 const catalogOverview = [
   {
     title: "Filter Media",
-    text: "Needle-punched polyester, needle-punched polypropylene, and monofilament mesh media in bulk roll form for custom fabrication."
+    text: "Needle-punched polyester, needle-punched polypropylene, and monofilament mesh media in bulk roll form for custom fabrication. Micron ratings from 0.5 to 1500 µm depending on media type."
   },
   {
     title: "Liquid Filter Bags",
-    text: "Monofilament nylon/polyester mesh bags and polypropylene, polyester, aramid, or PTFE felt bags."
+    text: "Monofilament nylon/polyester mesh bags and polypropylene, polyester, aramid, or PTFE felt bags. Standard sizes 1#-4#, with extended-life and high-performance pleated options available."
   },
   {
     title: "Filter Cartridges",
-    text: "Melt blown PP, string wound, oil-field pleated, membrane pleated, and carbon cartridges."
+    text: "Melt blown PP, string wound, oil-field pleated, membrane pleated, and carbon cartridges covering removal ratings from 0.1 to 150 µm across the range."
   },
   {
     title: "High Flow Cartridges",
-    text: "Big-diameter cartridges for high-volume applications with fewer change-outs and lower labor cost."
+    text: "Big-diameter cartridges for high-volume applications with fewer change-outs and lower labor cost per gallon treated."
   },
   {
     title: "Pleated Membrane Cartridges",
-    text: "PP, PES, PTFE, Nylon 6, and PVDF membrane cartridge families for critical processes."
+    text: "PP, PES, PTFE, Nylon 6, and PVDF membrane cartridge families for critical process applications in pharmaceutical, electronics, and chemical service."
   },
   {
     title: "Melt Blown Cartridges",
-    text: "Thermally bonded PP depth cartridges for water, food and beverage, plating, chemicals, and more."
+    text: "Thermally bonded PP depth cartridges for drinking water, food and beverage, plating, electronics, industrial water treatment, and chemicals/solvents."
   },
   {
     title: "Oil & Carbon Cartridges",
-    text: "Oil absorption cartridges, activated carbon, and carbon block formats for polishing and treatment."
+    text: "Oil absorption cartridges, activated carbon, and carbon block formats for taste/odor polishing, chlorine reduction, and hydrocarbon capture."
   },
   {
     title: "String Wound - Extended Line",
-    text: "Standard and extra-long string wound cartridges for high dirt-holding capacity and extended service life."
+    text: "Standard and extra-long string wound cartridges for high dirt-holding capacity, low media migration, and extended service life under high PSID."
   },
   {
     title: "Filter Housings",
-    text: "Single bag, duplex, multi-bag, cartridge, self-cleaning, and RO membrane housings."
+    text: "Single bag, duplex, multi-bag, cartridge, self-cleaning, and RO membrane housings in SS304, SS316L, or carbon steel sized to your flow requirement."
   }
 ];
 
@@ -48,7 +48,7 @@ const categoryCopy = {
   "Chemical & Solvent Filtration":
     "Options for aggressive media, solvent service, and controlled process conditions.",
   "High-Flow Industrial Filtration":
-    "High-area cartridges for larger volume service where fewer changeouts matter."
+    "High-area cartridges for larger volume service where fewer change-outs matter."
 };
 
 export function ProductsPage() {
@@ -57,13 +57,14 @@ export function ProductsPage() {
       <div className="page stack-lg">
         <div>
           <span className="eyebrow">Products</span>
-          <h1 className="display page-title">One source for filter media, bags, cartridges, housings, and systems.</h1>
+          <h1 className="display page-title">One Source for Filter Media, Bags, Cartridges, Housings, and Systems</h1>
           <p className="lead">
-            Needle-punched and monofilament media, liquid filter bags, cartridges, high flow units, membrane
-            cartridges, melt blown cartridges, oil and carbon cartridges, string wound cartridges, and housings.
+            Needle-punched and monofilament media, liquid filter bags, cartridges, high-flow units, membrane
+            cartridges, melt blown cartridges, oil and carbon cartridges, string wound cartridges, and housings all
+            from a single supplier.
           </p>
           <p className="lead">
-            Custom length and width are available on request, and quotes are straightforward with no hidden costs.
+            Custom lengths and widths are available on request. Quotes are straightforward, with no hidden costs.
           </p>
         </div>
 
@@ -78,24 +79,6 @@ export function ProductsPage() {
           ))}
         </div>
 
-        <div className="card card-pad">
-          <h2 className="display" style={{ marginTop: 0 }}>
-            Need help choosing a product family?
-          </h2>
-          <p className="muted">
-            We help you choose the right micron rating, media, and housing for your application before you request a
-            quote.
-          </p>
-          <div className={styles.cardActions}>
-            <Link to="/contact" className="btn btn-primary">
-              Request a Quote
-            </Link>
-            <Link to="/technical-data" className="btn btn-secondary">
-              View Technical Data
-            </Link>
-          </div>
-        </div>
-
         <div className={styles.familySection}>
           <div className={styles.familyHeader}>
             <div>
@@ -105,20 +88,20 @@ export function ProductsPage() {
           </div>
           <div className={styles.categoryList}>
             {productCategories.map((category) => (
-            <article key={category} className="card card-pad">
-              <h2 className="display" style={{ marginTop: 0 }}>
-                {category}
-              </h2>
-              <p className="muted">{categoryCopy[category]}</p>
-              <div className={styles.cardActions}>
-                <a href={`#${categoryToAnchor(category)}`} className="btn btn-secondary">
-                  Jump to family grid
-                </a>
-                <Link to={`/products/${productsByCategory(category)[0]?.slug}`} className="btn btn-primary">
-                  View a family
-                </Link>
-              </div>
-            </article>
+              <article key={category} className="card card-pad">
+                <h2 className="display" style={{ marginTop: 0 }}>
+                  {category}
+                </h2>
+                <p className="muted">{categoryCopy[category]}</p>
+                <div className={styles.cardActions}>
+                  <a href={`#${categoryToAnchor(category)}`} className="btn btn-secondary">
+                    Jump to family grid
+                  </a>
+                  <Link to={`/products/${productsByCategory(category)[0]?.slug}`} className="btn btn-primary">
+                    View a family
+                  </Link>
+                </div>
+              </article>
             ))}
           </div>
         </div>

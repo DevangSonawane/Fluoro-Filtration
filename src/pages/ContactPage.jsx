@@ -8,6 +8,9 @@ const industries = ["Pharmaceutical Manufacturing", "Chemical Processing", "Proc
 export function ContactPage() {
   const [searchParams] = useSearchParams();
   const product = searchParams.get("product");
+  const contactEmail = "devang@fluorofiltration.com";
+  const contactPhone = "+91 91373 08280";
+  const whatsAppPhone = "919137308280";
 
   return (
     <section className="section">
@@ -30,21 +33,32 @@ export function ContactPage() {
             </h2>
             <div className={styles.contactRow}>
               <Mail size={18} />
-              <a href="mailto:info@fluorofiltration.in">info@fluorofiltration.in</a>
+              <span>{contactEmail}</span>
             </div>
             <div className={styles.contactRow}>
               <Phone size={18} />
-              <a href="tel:+910000000000">+91 00000 00000</a>
+              <span>{contactPhone}</span>
             </div>
             <div className={styles.contactRow}>
               <MessageCircle size={18} />
-              <a href="https://wa.me/910000000000" target="_blank" rel="noreferrer">
+              <a href={`https://wa.me/${whatsAppPhone}`} target="_blank" rel="noreferrer">
                 WhatsApp
               </a>
             </div>
 
-            <div className={styles.note}>
-              Fast quote turnaround and real answers to technical questions, not automated replies.
+            <div className={styles.addressBlock}>
+              <div className={styles.addressLabel}>Address</div>
+              <div className={styles.addressText}>
+                FLUORO TECH ENGINEERING WORKS
+                <br />
+                1st Floor, Survey No. 66. Plot No. 89,
+                <br />
+                Valiv Phata, Sativali Road
+                <br />
+                Opp. Jay Equipment Pvt. Ltd.
+                <br />
+                Vasai - E, Thane - 401 208
+              </div>
             </div>
 
             <Link to="/products" className="btn btn-secondary">
@@ -84,7 +98,7 @@ function ContactForm({ product }) {
       form.message
     ].join("\n");
 
-    const mailto = new URL("mailto:info@fluorofiltration.in");
+    const mailto = new URL(`mailto:${contactEmail}`);
     mailto.searchParams.set("subject", subject);
     mailto.searchParams.set("body", body);
     window.location.href = mailto.toString();

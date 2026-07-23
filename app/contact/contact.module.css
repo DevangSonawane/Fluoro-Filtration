@@ -47,11 +47,33 @@
   color: var(--ink);
 }
 
+.addressBlock {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(31, 102, 255, 0.06);
+  border: 1px solid rgba(31, 102, 255, 0.14);
+  color: var(--slate);
+}
+
+.addressLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--clarity);
+}
+
+.addressText {
+  line-height: 1.5;
+}
+
 .note {
   padding: 16px;
   border-radius: 16px;
-  background: rgba(31, 122, 120, 0.08);
-  border: 1px solid rgba(31, 122, 120, 0.14);
+  background: rgba(31, 102, 255, 0.08);
+  border: 1px solid rgba(31, 102, 255, 0.14);
   color: var(--slate);
 }
 

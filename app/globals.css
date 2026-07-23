@@ -1,10 +1,10 @@
 :root {
-  --ink: #10201c;
-  --paper: #f7f8f6;
-  --clarity: #1f7a78;
-  --flow: #e8a33d;
-  --slate: #4b5c58;
-  --hairline: #dce3e0;
+  --ink: #091a33;
+  --paper: #f4f8ff;
+  --clarity: #1f66ff;
+  --flow: #1ec8ff;
+  --slate: #52647f;
+  --hairline: #d9e4f3;
   --font-inter: "Inter";
   --font-space-grotesk: "Space Grotesk";
   --font-ibm-plex-mono: "IBM Plex Mono";
@@ -26,8 +26,8 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(31, 122, 120, 0.08), transparent 35%),
-    radial-gradient(circle at 85% 15%, rgba(232, 163, 61, 0.1), transparent 20%),
+    radial-gradient(circle at top left, rgba(31, 102, 255, 0.1), transparent 35%),
+    radial-gradient(circle at 85% 15%, rgba(30, 200, 255, 0.12), transparent 20%),
     var(--paper);
   color: var(--ink);
   font-family: var(--font-inter), system-ui, sans-serif;
@@ -47,7 +47,7 @@ textarea {
 }
 
 ::selection {
-  background: rgba(31, 122, 120, 0.16);
+  background: rgba(31, 102, 255, 0.16);
 }
 
 .site-shell {
@@ -102,7 +102,7 @@ textarea {
 }
 
 .card {
-  background: rgba(247, 248, 246, 0.88);
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(220, 227, 224, 0.95);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
@@ -167,7 +167,7 @@ textarea {
 
 .btn-cta {
   background: var(--flow);
-  color: var(--ink);
+  color: #041028;
 }
 
 .chip {
@@ -176,9 +176,9 @@ textarea {
   gap: 8px;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(31, 122, 120, 0.08);
+  background: rgba(31, 102, 255, 0.08);
   color: var(--clarity);
-  border: 1px solid rgba(31, 122, 120, 0.14);
+  border: 1px solid rgba(31, 102, 255, 0.14);
   font-size: 0.88rem;
   font-weight: 600;
 }

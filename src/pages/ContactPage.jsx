@@ -14,9 +14,10 @@ export function ContactPage() {
       <div className="page stack-lg">
         <div>
           <span className="eyebrow">Contact</span>
-          <h1 className="display page-title">Request a quote or send a spec sheet.</h1>
+          <h1 className="display page-title">Need help selecting the right filter for your application?</h1>
           <p className="lead">
-            We reply directly. If you already know the product family, include it in the form so we can move faster.
+            Send us your specs - flow rate, micron requirement, fluid type, operating temperature and pressure - and
+            we&apos;ll recommend the right solution and get you a quote fast.
           </p>
         </div>
 
@@ -43,8 +44,7 @@ export function ContactPage() {
             </div>
 
             <div className={styles.note}>
-              Prefer a shorter path? Email the spec sheet and mention the process, micron range, and any heat or
-              solvent constraints.
+              Fast quote turnaround and real answers to technical questions, not automated replies.
             </div>
 
             <Link to="/products" className="btn btn-secondary">
@@ -146,7 +146,7 @@ function ContactForm({ product }) {
         <small>For v1, the mail draft will open in your email app. Attach the file there if needed.</small>
       </label>
       <button type="submit" className="btn btn-cta">
-        Open email draft
+        Request a Quote
       </button>
     </form>
   );

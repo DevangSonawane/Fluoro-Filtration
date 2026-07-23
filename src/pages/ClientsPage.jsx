@@ -2,16 +2,40 @@ import { Link } from "react-router-dom";
 
 const categories = [
   {
-    label: "Pharmaceutical manufacturers",
-    text: "Process liquids, membrane filtration, and prefilter stages."
+    label: "Water & Wastewater Treatment",
+    text: "Bag housings, melt blown cartridges, self-cleaning filters."
   },
   {
-    label: "Chemical processors",
-    text: "Solvent-facing and chemically resistant cartridge applications."
+    label: "Food & Beverage",
+    text: "Sanitary housings, PP pleated cartridges, carbon cartridges."
   },
   {
-    label: "Utility and process water",
-    text: "Higher-volume filtration and prefiltration support."
+    label: "Pharmaceuticals",
+    text: "PES/PTFE/Nylon 6 membrane cartridges."
+  },
+  {
+    label: "Chemical Processing",
+    text: "String wound, PVDF cartridges, PP housings."
+  },
+  {
+    label: "Oil & Gas",
+    text: "Oil-field pleated cartridges, oil absorption bags."
+  },
+  {
+    label: "Electronics & Semiconductor",
+    text: "Jumbo pleated cartridges, PES/PTFE membranes."
+  },
+  {
+    label: "RO / Desalination",
+    text: "High flow cartridges, RO membrane housings."
+  },
+  {
+    label: "Power Plant",
+    text: "Backwashable PP pleated cartridges for condensate treatment."
+  },
+  {
+    label: "Paints & Coatings",
+    text: "Fine-micron cartridges for finish quality."
   }
 ];
 
@@ -20,8 +44,8 @@ export function ClientsPage() {
     <section className="section">
       <div className="page stack-lg">
         <div>
-          <span className="eyebrow">Clients</span>
-          <h1 className="display page-title">Industries we support.</h1>
+          <span className="eyebrow">Applications We Serve</span>
+          <h1 className="display page-title">Industrial filtration support across multiple sectors.</h1>
           <p className="lead">
             We keep the focus on the work we can support well: filtration selection, sourcing, and technical follow-up
             for industrial buyers.
@@ -44,7 +68,7 @@ export function ClientsPage() {
             Want to talk through a requirement?
           </h2>
           <p className="muted">
-            Send the process conditions and we’ll narrow the product family before you request pricing.
+            Send the process conditions and we&apos;ll narrow the product family before you request pricing.
           </p>
           <Link to="/contact" className="btn btn-secondary">
             Get in touch

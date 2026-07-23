@@ -6,31 +6,59 @@ import styles from "../../app/page.module.css";
 
 const pillars = [
   {
-    title: "Technical fit, not just a catalog.",
-    text: "We help you match the right media and micron rating to the process conditions you actually run."
+    title: "Fast, Reliable Delivery",
+    text: "Stocked inventory means shorter lead times when your process can't wait."
   },
   {
-    title: "Documentation you can hand to QA.",
-    text: "Batch paperwork and material data are part of the conversation, not an afterthought."
+    title: "Technical Selection Support",
+    text: "We help you choose the right micron rating, media, and housing - not just sell you a part number."
   },
   {
-    title: "A partner who answers the phone.",
-    text: "You get direct technical support from someone who understands filtration decisions."
+    title: "Wide Product Range",
+    text: "One source for filter media, bags, cartridges, housings, and complete filtration systems."
+  },
+  {
+    title: "Responsive Service",
+    text: "Fast quote turnaround and real answers to technical questions, not automated replies."
   }
 ];
 
 const industries = [
   {
-    title: "Pharmaceutical Manufacturing",
-    text: "Process liquids, final filtration, and tighter membrane grades."
+    title: "Water & Wastewater Treatment",
+    text: "Bag housings, melt blown cartridges, self-cleaning filters."
+  },
+  {
+    title: "Food & Beverage",
+    text: "Sanitary housings, PP pleated cartridges, carbon cartridges."
+  },
+  {
+    title: "Pharmaceuticals",
+    text: "PES/PTFE/Nylon 6 membrane cartridges."
   },
   {
     title: "Chemical Processing",
-    text: "Solvent-compatible and chemically resistant cartridge choices."
+    text: "String wound, PVDF cartridges, PP housings."
   },
   {
-    title: "Process Water Treatment",
-    text: "Prefiltration for larger-volume water and utility streams."
+    title: "Oil & Gas",
+    text: "Oil-field pleated cartridges, oil absorption bags."
+  },
+  {
+    title: "Electronics & Semiconductor",
+    text: "Jumbo pleated cartridges, PES/PTFE membranes."
+  },
+  {
+    title: "RO / Desalination",
+    text: "High flow cartridges, RO membrane housings."
+  },
+  {
+    title: "Power Plant",
+    text: "Backwashable PP pleated cartridges for condensate treatment."
+  },
+  {
+    title: "Paints & Coatings",
+    text: "Fine-micron cartridges for finish quality."
   }
 ];
 
@@ -41,10 +69,15 @@ export function HomePage() {
         <div className={`page ${styles.heroGrid}`}>
           <div className={styles.heroCopy}>
             <span className="eyebrow">Fluoro Filtration</span>
-            <h1 className={`display ${styles.heroTitle}`}>Filtration that holds up to inspection.</h1>
+            <h1 className={`display ${styles.heroTitle}`}>Industrial Filtration Solutions, Delivered Fast</h1>
             <p className={styles.heroText}>
-              We source and support pleated cartridge filters, filter bags, and membrane media for pharmaceutical and
-              chemical manufacturers across India, with the technical documentation to back every batch.
+              Your trusted source for filter bags, cartridges, housings, and complete filtration systems - backed by
+              technical expertise and reliable stock availability.
+            </p>
+            <p className={styles.heroText}>
+              We supply high-performance liquid filtration products to industries that can't afford downtime. From fine
+              particulate removal to high-flow industrial filtration, we help you find the right filter for your
+              process - with the technical support to back it up.
             </p>
             <div className={styles.actions}>
               <a href="#finder" className="btn btn-primary">
@@ -54,19 +87,22 @@ export function HomePage() {
               <Link to="/contact" className="btn btn-secondary">
                 Request a Quote
               </Link>
+              <Link to="/products" className="btn btn-secondary">
+                Download Product Catalog
+              </Link>
             </div>
           </div>
           <div className={styles.heroPanel}>
             <div className={styles.heroCard}>
               <div className={styles.heroCardTop}>
-                <span className="chip">Filtering by process condition</span>
+                <span className="chip">Industrial liquid filtration</span>
                 <CheckCircle2 size={18} />
               </div>
               <p className={styles.heroCardText}>
-                A clear way to narrow the choice before you request pricing or a trial.
+                A straightforward way to narrow the choice before you request pricing or a trial.
               </p>
               <div className={styles.heroNote}>
-                Start with your process, micron range, and any heat, solvent, or autoclave constraints.
+                Start with your flow rate, micron requirement, fluid type, operating temperature, and pressure.
               </div>
             </div>
             <PleatMotif variant="hero" className={styles.heroMotif} />
@@ -87,8 +123,8 @@ export function HomePage() {
       <section className="section">
         <div className="page stack-lg">
           <div>
-            <span className="eyebrow">Why Fluoro Filtration</span>
-            <h2 className="display section-title">Small enough to stay precise. Structured enough to stay useful.</h2>
+            <span className="eyebrow">Why Choose Us</span>
+            <h2 className="display section-title">Fast support, broad range, and straight answers.</h2>
           </div>
           <div className="grid-3">
             {pillars.map((pillar) => (
@@ -106,8 +142,8 @@ export function HomePage() {
       <section className="section">
         <div className="page stack-lg">
           <div>
-            <span className="eyebrow">Industries served</span>
-            <h2 className="display section-title">Focused on the work we can support well.</h2>
+            <span className="eyebrow">Applications We Serve</span>
+            <h2 className="display section-title">One source across industrial liquid filtration applications.</h2>
           </div>
           <div className="grid-3">
             {industries.map((industry) => (
@@ -126,9 +162,10 @@ export function HomePage() {
         <div className="page">
           <div className={`card card-pad ${styles.ctaBand}`}>
             <div>
-              <span className="eyebrow">Need pricing</span>
+              <span className="eyebrow">Contact / CTA</span>
               <h2 className={`display ${styles.ctaTitle}`}>
-                Have a spec sheet already? Send it over and we’ll confirm compatibility and pricing within 48 hours.
+                Need help selecting the right filter for your application? Send us your specs and we’ll recommend the
+                right solution and get you a quote fast.
               </h2>
             </div>
             <Link to="/contact" className="btn btn-cta">

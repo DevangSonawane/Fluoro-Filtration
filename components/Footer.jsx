@@ -8,7 +8,7 @@ export function Footer() {
         <div>
           <img src="/ff.png" alt="Fluoro Filtration" className={styles.brandImage} />
           <p className={styles.text}>
-            Filtration sourcing and technical support for pharmaceutical and chemical manufacturers in India.
+            One source for filter media, bags, cartridges, housings, and complete filtration systems.
           </p>
         </div>
         <div className={styles.links}>

@@ -21,10 +21,10 @@ export function TechnicalDataPage() {
       <div className="page stack-lg">
         <div>
           <span className="eyebrow">Technical Data</span>
-          <h1 className="display page-title">Technical references for early-stage screening.</h1>
+          <h1 className="display page-title">Chemical resistance data for early-stage screening.</h1>
           <p className="lead">
-            This section is for first-pass compatibility checks. For a final recommendation, send the process details
-            or spec sheet through the contact form.
+            Search our comprehensive database to check compatibility with over 400 chemicals, then send the process
+            details or spec sheet through the contact form for a final recommendation.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export function TechnicalDataPage() {
             Need a confirmation?
           </h2>
           <p className="muted">
-            Send the spec sheet and we’ll verify the right product family instead of relying on a catalog shortcut.
+            We help you choose the right micron rating, media, and housing - not just sell you a part number.
           </p>
           <Link to="/contact" className="btn btn-primary">
             Contact us

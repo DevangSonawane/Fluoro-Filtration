@@ -9,11 +9,12 @@ export function AboutPage() {
       <div className="page stack-lg">
         <div>
           <span className="eyebrow">About</span>
-          <h1 className="display page-title">A sourcing partner with technical discipline.</h1>
+          <h1 className="display page-title">A dedicated distributor built to remove the guesswork.</h1>
           <p className="lead">
-            Fluoro Filtration helps pharmaceutical and chemical manufacturers choose cartridge and membrane options
-            that fit their process conditions. We work through the actual operating question first, then translate
-            that into a clear product recommendation and a quote request.
+            We&apos;re a dedicated distributor of industrial liquid filtration products, built to serve manufacturers,
+            processors, and facilities that need dependable filtration without the guesswork. Rather than pushing a
+            single product line, we focus on matching the right filter media, cartridge, or housing to your specific
+            application.
           </p>
         </div>
 
@@ -23,29 +24,26 @@ export function AboutPage() {
               What we do
             </h2>
             <p className="muted">
-              We source filtration products through our manufacturing partner network and support buyers with product
-              selection, documentation review, and batch-to-batch ordering continuity.
+              We consider micron rating, chemical compatibility, flow rate, and operating conditions before we
+              recommend anything.
             </p>
           </article>
           <article className="card card-pad">
             <h2 className="display" style={{ marginTop: 0 }}>
               How we work
             </h2>
-            <div className={styles.steps}>
-              {processSteps.map((step, index) => (
-                <div key={step} className={styles.step}>
-                  <span className={styles.index}>{index + 1}</span>
-                  <span>{step}</span>
-                </div>
-              ))}
-            </div>
+            <p className="muted">
+              Need help selecting between a pleated cartridge and a string-wound filter for a high-viscosity fluid?
+              Not sure what housing material will hold up against your process chemistry? That&apos;s exactly where we
+              come in.
+            </p>
           </article>
         </div>
 
         <div className={styles.cta}>
           <div>
             <span className="eyebrow">Get in touch</span>
-            <h2 className="display section-title">Send the spec sheet and we’ll help you narrow the options.</h2>
+            <h2 className="display section-title">Send us your specs and we’ll help narrow the options.</h2>
           </div>
           <Link to="/contact" className="btn btn-cta">
             Contact us

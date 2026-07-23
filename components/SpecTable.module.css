@@ -1,0 +1,40 @@
+.table {
+  overflow: hidden;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 18px;
+  padding: 18px 22px;
+  border-bottom: 1px solid rgba(220, 227, 224, 0.8);
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.label {
+  color: var(--slate);
+}
+
+.value {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.mono {
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 720px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

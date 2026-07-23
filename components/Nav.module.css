@@ -1,0 +1,196 @@
+.outer {
+  position: fixed;
+  top: 24px;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.navShell {
+  width: 100%;
+  max-width: 1024px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition:
+    background-color 300ms ease,
+    box-shadow 300ms ease,
+    border-color 300ms ease,
+    padding 300ms ease;
+  position: relative;
+}
+
+.resting {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+  padding: 8px 20px;
+  border-color: transparent;
+}
+
+.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
+  padding: 6px 14px;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  object-fit: contain;
+  transition: height 300ms ease;
+  width: auto;
+}
+
+.logoResting {
+  height: 64px;
+}
+
+.logoScrolled {
+  height: 54px;
+}
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 4px;
+}
+
+.desktopLink {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 999px;
+}
+
+.desktopLinkInner {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: #475569;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition:
+    color 200ms ease,
+    background-color 200ms ease;
+}
+
+.desktopLink:hover .desktopLinkInner {
+  color: #0f172a;
+  background: rgba(241, 245, 249, 0.5);
+}
+
+.activeTab {
+  color: #ffffff;
+}
+
+.activeBackground {
+  position: absolute;
+  inset: 0;
+  background: #2563eb;
+  border-radius: 999px;
+  z-index: 0;
+}
+
+.desktopLinkText {
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.mobileMenuButtonWrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.mobileMenuButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  border-radius: 999px;
+  color: #64748b;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.menuIcon {
+  width: 22px;
+  height: 22px;
+}
+
+.mobileMenu {
+  overflow: hidden;
+}
+
+.mobileMenuInner {
+  display: grid;
+  gap: 8px;
+  padding: 14px 8px 6px;
+}
+
+.mobileLink {
+  display: block;
+  padding: 12px 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #475569;
+  font-size: 0.98rem;
+  font-weight: 500;
+  transition:
+    color 200ms ease,
+    background-color 200ms ease;
+}
+
+.mobileLinkActive {
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.08);
+}
+
+@media (min-width: 768px) {
+  .desktopNav {
+    display: flex;
+  }
+
+  .mobileMenuButtonWrap {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .outer {
+    top: 12px;
+    padding: 0 10px;
+  }
+
+  .navShell {
+    max-width: 100%;
+  }
+
+  .resting {
+    padding: 6px 12px;
+  }
+
+  .scrolled {
+    padding: 5px 10px;
+  }
+}

@@ -69,12 +69,29 @@
   line-height: 1.5;
 }
 
-.note {
+.mapBlock {
+  display: grid;
+  gap: 10px;
   padding: 16px;
-  border-radius: 16px;
-  background: rgba(31, 102, 255, 0.08);
+  border-radius: 18px;
   border: 1px solid rgba(31, 102, 255, 0.14);
-  color: var(--slate);
+  background: rgba(31, 102, 255, 0.06);
+}
+
+.mapLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--clarity);
+}
+
+.mapFrame {
+  width: 100%;
+  min-height: 260px;
+  border: 0;
+  border-radius: 16px;
+  background: #ffffff;
 }
 
 @media (max-width: 900px) {

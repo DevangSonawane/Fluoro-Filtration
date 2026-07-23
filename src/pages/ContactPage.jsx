@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { Mail, Phone, MessageCircle } from "lucide-react";
 import styles from "../../app/contact/contact.module.css";
 
@@ -25,7 +25,7 @@ export function ContactPage() {
         </div>
 
         <div className="grid-2">
-          <ContactForm product={product} />
+          <ContactForm product={product} contactEmail={contactEmail} />
 
           <aside className={`card card-pad ${styles.side}`}>
             <h2 className="display" style={{ marginTop: 0 }}>
@@ -61,9 +61,16 @@ export function ContactPage() {
               </div>
             </div>
 
-            <Link to="/products" className="btn btn-secondary">
-              Browse products
-            </Link>
+            <div className={styles.mapBlock}>
+              <div className={styles.mapLabel}>Find us on the map</div>
+              <iframe
+                className={styles.mapFrame}
+                title="Fluoro Tech Engineering Works location"
+                src="https://www.google.com/maps?q=FLUORO%20TECH%20ENGINEERING%20WORKS%2C%201st%20Floor%2C%20Survey%20No.%2066.%20Plot%20No.%2089%2C%20Valiv%20Phata%2C%20Sativali%20Road%2C%20Opp.%20Jay%20Equipment%20Pvt.%20Ltd.%2C%20Vasai%20E%2C%20Thane%20401%20208&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </aside>
         </div>
       </div>
@@ -71,7 +78,7 @@ export function ContactPage() {
   );
 }
 
-function ContactForm({ product }) {
+function ContactForm({ product, contactEmail }) {
   const [form, setForm] = useState({
     name: "",
     company: "",
